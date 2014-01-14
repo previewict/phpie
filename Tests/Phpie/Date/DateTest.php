@@ -1,4 +1,5 @@
 <?php
+include_once('../Bootstrap.php');
 
 use Phpie\Date;
 
@@ -11,7 +12,7 @@ class DateTest extends PHPUnit_Framework_TestCase {
 
     public function testWithoutArgument()
     {
-        var_dump($this->Date);
+        $this->assertEquals(NULL, $this->Date->test());
     }
 }
  

@@ -7,13 +7,14 @@
 
 use Phpie\Autoload\Autoload;
 
-$path = realpath(dirname(__DIR__));
+$pathLibrary = realpath(dirname(dirname(__DIR__)));
+$pathTests = realpath(dirname(__DIR__));
 
-include $path . '/Phpie/Autoload/Autoload.php';
+include $pathLibrary . '/Phpie/Autoload/Autoload.php';
 
 Autoload::register(
     array(
-        'Phpie' => $path,
-        'Tests' => $path
+        'Phpie' => $pathLibrary,
+        'Tests' => $pathTests
     )
 );
