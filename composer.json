@@ -4,8 +4,5 @@
             "type": "vcs",
             "url":  "https://github.com/shahariaazam/phpie.git"
         }
-    ],
-    "require": {
-        "phpie": "0.*"
-    }
+    ]
 }
