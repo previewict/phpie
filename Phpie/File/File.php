@@ -6,9 +6,10 @@
  * @URI http://www.shahariaazam.com
  */
 
-namespace Component\File;
+namespace Phpie\File;
 
 
-class File {
+class File
+{
 
 } 

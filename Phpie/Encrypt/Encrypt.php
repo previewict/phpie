@@ -6,9 +6,10 @@
  * @URI http://www.shahariaazam.com
  */
 
-namespace Component\Encrypt;
+namespace Phpie\Encrypt;
 
 
-class Encrypt {
+class Encrypt
+{
 
 } 

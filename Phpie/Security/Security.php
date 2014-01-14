@@ -1,14 +1,15 @@
 <?php
 /**
- * Date Component to work with Date
+ * Security component to handle security
  *
  * @Author Shaharia Azam
  * @URI http://www.shahariaazam.com
  */
 
-namespace Component\Date;
+namespace Phpie\Security;
 
 
-class Date {
+class Security
+{
 
 } 

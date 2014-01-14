@@ -1,14 +1,15 @@
 <?php
 /**
- * Mail Component
+ * Time component to work with Time
  *
  * @Author Shaharia Azam
  * @URI http://www.shahariaazam.com
  */
 
-namespace Component\Mail;
+namespace Phpie\Time;
 
 
-class Mail {
+class Time
+{
 
 } 
