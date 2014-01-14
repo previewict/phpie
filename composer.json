@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Component library for PHP",
     "keywords": ["php","component","phpcomponent"],
-    "homepage": "http://github.com/shahariaazam/phpie",
+    "homepage": "http://github.com/phpie/phpie",
     "license": "MIT",
     "authors": [
         {
