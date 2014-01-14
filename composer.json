@@ -6,6 +6,6 @@
         }
     ],
     "require": {
-        "shahariaazam/phpie": "0.*"
+        "phpie": "0.*"
     }
 }
