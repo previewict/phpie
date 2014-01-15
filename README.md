@@ -23,6 +23,7 @@ There are 2 ways to install or add this component library for your project.
 
 **via Composer**
 - In your **composer.json** just add the following lines of code
+
 ```json
 {
     "require": {
@@ -32,10 +33,11 @@ There are 2 ways to install or add this component library for your project.
 ```
 and run update your dependencies via running composer update command.
 
-***Download as ZIP**
+**Download as ZIP**
 Download the latest stable release as a ZIP folder and extract it into your vendor (or wherever you need) directory.
 
 After downloading zip or updating composer. Just load this library by adding the following code in your bootstrap file or the main PHP file for your project.
+
 ```php
 require 'vendor/autoload.php';
 ```
