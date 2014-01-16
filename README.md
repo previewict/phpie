@@ -12,6 +12,7 @@ Existing Components
 - Mail
 - Security
 - Time
+- CLI
 
 Proposed Components
 ======
