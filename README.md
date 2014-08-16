@@ -2,7 +2,7 @@ PHPie
 =====
 **PHPie** (pronounced like PH-Pie) and it's all about PHP that's why it's name **PHPie**.
 
-[PHPie](https://github.com/phpie/phpie) is a standard PHP component library to use in any kinds of PHP driven web application. It's still in **development** version. We are working on it to make a stable release to make it more useful for people for their great applications.
+[PHPie](https://github.com/previewict/phpie) is a standard PHP component library to use in any kinds of PHP driven web application. It's still in **development** version. We are working on it to make a stable release to make it more useful for people for their great applications.
 
 Existing Components
 ======
@@ -16,7 +16,7 @@ Existing Components
 
 Proposed Components
 ======
- _not available yet_. Please propose a new component what you need in future from [Propose a Component](https://github.com/phpie/phpie/issues/new)
+ _not available yet_. Please propose a new component what you need in future from [Propose a Component](https://github.com/previewict/phpie/issues/new)
  
 How to use
 ======
@@ -28,7 +28,7 @@ There are 2 ways to install or add this component library for your project.
 ```json
 {
     "require": {
-        "phpie/phpie": "0.2"
+        "previewict/phpie": "0.2"
     }
 }
 ```
@@ -47,17 +47,17 @@ And now you are ready to use `PHPie` component library.
 
 Documentation
 ======
-Read documentation to see it's usage and facts in details please go to this [PHPie Documentation](https://github.com/phpie/phpie/wiki) page.
+Read documentation to see it's usage and facts in details please go to this [PHPie Documentation](https://github.com/previewict/phpie/wiki) page.
 
 Support
 ======
-- [Submit Issue](https://github.com/phpie/phpie/issues/new)
+- [Submit Issue](https://github.com/previewict/phpie/issues/new)
 
 
 Contributing
 ======
-- [List of our awesome contributors](https://github.com/phpie/phpie/graphs/contributors)
-If you also want to contribute to make this `phpie` more handy and useful then please [fork](https://github.com/phpie/phpie/fork) it and send us pull request with your modified or latest codes.
+- [List of our awesome contributors](https://github.com/previewict/phpie/graphs/contributors)
+If you also want to contribute to make this `phpie` more handy and useful then please [fork](https://github.com/previewict/phpie/fork) it and send us pull request with your modified or latest codes.
 
 **To make things more easier we have built this. We are asking your help to enlarge this library. Without your help it's not easy to make it large. Fork it and stay tuned with us**
 
