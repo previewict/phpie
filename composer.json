@@ -1,0 +1,23 @@
+{
+    "name": "previewict/phpie",
+
+    "description": "PHPie PHP Component Library",
+
+    "license": "MIT",
+
+    "keywords": ["component", "php"],
+
+    "require": {
+        "php": ">=5.4.0"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Phpie\\": ""
+        }
+    }
+}
