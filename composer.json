@@ -1,24 +1,24 @@
 {
-    "name": "phpie/phpie",
+    "name": "previewict/phpie",
     "type": "library",
     "description": "Component library for PHP5",
     "keywords": ["php","component","library"],
-    "homepage": "http://github.com/phpie/phpie",
+    "homepage": "http://github.com/previewict/phpie",
     "license": "MIT",
     "authors": [
         {
-            "name": "PHPie Community",
-            "homepage": "https://github.com/phpie/phpie/graphs/contributors"
+            "name": "Preview ICT",
+            "homepage": "https://github.com/previewict/phpie/graphs/contributors"
         }
     ],
     "support": {
-        "issues": "https://github.com/phpie/phpie/issues",
+        "issues": "https://github.com/previewict/phpie/issues",
         "forum": "http://stackoverflow.com/tags/phpie",
-        "source": "https://github.com/phpie/phpie"
+        "source": "https://github.com/previewict/phpie"
     },
 
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0"
     },
 
     "autoload": {

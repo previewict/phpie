@@ -34,3 +34,15 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Editor specific ignored files #
+#################################
+.idea/*
+
+# Git specific files #
+######################
+.git/*
+
+# Vendor specific library files #
+#################################
+vendor/*
