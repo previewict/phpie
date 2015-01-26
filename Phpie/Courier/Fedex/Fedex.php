@@ -18,13 +18,26 @@ class Fedex
 
     protected $Newline = '<br />';
 
+    protected $authKey;
+    protected $authPassword;
+    protected $authAccountNumber;
+    protected $authMeterNumber;
+
+    public function __construct($key, $password, $accountNumber, $meterNumber)
+    {
+        $this->authKey = $key;
+        $this->authPassword = $password;
+        $this->authAccountNumber = $accountNumber;
+        $this->authMeterNumber = $meterNumber;
+    }
+
     /**
      * @param $client
      * @param $response
      */
     function printSuccess($client, $response)
     {
-        printReply($client, $response);
+        $this->printReply($client, $response);
     }
 
     /**
@@ -47,8 +60,8 @@ class Fedex
             echo '<h2>The transaction returned a Failure.</h2>';
         }
         echo "\n";
-        printNotifications($response->Notifications);
-        printRequestResponse($client, $response);
+        $this->printNotifications($response->Notifications);
+        $this->printRequestResponse($client, $response);
     }
 
     /**
@@ -73,7 +86,7 @@ class Fedex
         echo '<h2>Fault</h2>' . "<br>\n";
         echo "<b>Code:</b>{$exception->faultcode}<br>\n";
         echo "<b>String:</b>{$exception->faultstring}<br>\n";
-        writeToLog($client);
+        $this->writeToLog($client);
 
         echo '<h2>Request</h2>' . "\n";
         echo '<pre>' . htmlspecialchars($client->__getLastRequest()) . '</pre>';
@@ -351,7 +364,7 @@ class Fedex
             if (is_string($note)) {
                 echo $noteKey . ': ' . $note . $this->Newline;
             } else {
-                printNotifications($note);
+                $this->printNotifications($note);
             }
         }
         echo $this->Newline;
@@ -363,7 +376,7 @@ class Fedex
      */
     function printError($client, $response)
     {
-        printReply($client, $response);
+        $this->printReply($client, $response);
     }
 
     /**
@@ -376,7 +389,7 @@ class Fedex
             if (is_array($value) || is_object($value)) {
                 $newSpacer = $spacer . '&nbsp;&nbsp;&nbsp;&nbsp;';
                 echo '<tr><td>' . $spacer . $key . '</td><td>&nbsp;</td></tr>';
-                trackDetails($value, $newSpacer);
+                $this->trackDetails($value, $newSpacer);
             } elseif (empty($value)) {
                 echo '<tr><td>' . $spacer . $key . '</td><td>' . $value . '</td></tr>';
             } else {
