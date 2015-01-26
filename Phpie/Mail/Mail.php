@@ -12,4 +12,4 @@ namespace Phpie\Mail;
 class Mail
 {
 
-} 
+}
