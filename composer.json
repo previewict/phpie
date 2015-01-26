@@ -20,7 +20,8 @@
     "require": {
         "php": ">=5.4.0",
         "ircmaxell/password-compat": "dev-master",
-        "mandrill/mandrill": "dev-master"
+        "mandrill/mandrill": "dev-master",
+        "phpunit/phpunit": "4.6.*@dev"
     },
 
     "autoload": {

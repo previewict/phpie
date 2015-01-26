@@ -1,0 +1,7 @@
+<?php
+define('authKey', 'FedEx Key');
+define('authPassword', 'FedEx Password');
+define('authAccountNumber', 'FedEx Account Number');
+define('authMeterNumber', 'FedEx Meter Number');
+
+define('trackingNumber', 'Your Test Tracking Number');

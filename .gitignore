@@ -46,3 +46,6 @@ Thumbs.db
 # Vendor specific library files #
 #################################
 vendor/*
+
+#Component Config Files
+Tests/Phpie/Courier/Fedex/config.php

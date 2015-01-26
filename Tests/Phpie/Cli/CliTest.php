@@ -1,5 +1,5 @@
 <?php
-include_once '../Bootstrap.php';
+include_once('../Bootstrap.php');
 /**
  * Cli Component Tests to work with PHP command line
  *

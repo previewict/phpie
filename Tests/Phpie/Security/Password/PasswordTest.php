@@ -1,5 +1,5 @@
 <?php
-include_once('../Bootstrap.php');
+include_once('../../Bootstrap.php');
 
 use Phpie\Security\Password\Password;
 
