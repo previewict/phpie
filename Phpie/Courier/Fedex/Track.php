@@ -8,6 +8,21 @@ namespace Phpie\Courier\Fedex;
 
 class Track extends Fedex
 {
+
+    public $lastStatusTime;
+    public $statusDescription;
+    public $currentStreet;
+    public $currentCity;
+    public $currentState;
+    public $currentCountry;
+    public $currentTrackingNumber;
+    public $currentDimensions;
+    public $currentService;
+    public $currentMasterTrackingNumber;
+    public $currentWeight;
+    public $currentTotalPieces;
+    public $currentPackaging;
+
     public function track($trackingNumber)
     {
 
@@ -56,33 +71,36 @@ class Track extends Fedex
 
             $response = $client->track($request);
 
-            if ($response->HighestSeverity != 'FAILURE' && $response->HighestSeverity != 'ERROR') {
-                if ($response->HighestSeverity != 'SUCCESS') {
-                    echo '<table border="1">';
-                    echo '<tr><th>Track Reply</th><th>&nbsp;</th></tr>';
-                    $this->trackDetails($response->Notifications, '');
-                    echo '</table>';
-                } else {
-                    if ($response->CompletedTrackDetails->HighestSeverity != 'SUCCESS') {
-                        echo '<table border="1">';
-                        echo '<tr><th>Shipment Level Tracking Details</th><th>&nbsp;</th></tr>';
-                        $this->trackDetails($response->CompletedTrackDetails, '');
-                        echo '</table>';
-                    } else {
-                        echo '<table border="1">';
-                        echo '<tr><th>Package Level Tracking Details</th><th>&nbsp;</th></tr>';
-                        $this->trackDetails($response->CompletedTrackDetails->TrackDetails, '');
-                        echo '</table>';
-                    }
-                }
-                $this->printSuccess($client, $response);
-            } else {
-                $this->printError($client, $response);
-            }
+            $this->responseToArray($response);
 
-            $this->writeToLog($client);    // Write to log file
+            return $response;
         } catch (SoapFault $exception) {
             $this->printFault($exception, $client);
+        }
+    }
+
+    public function responseToArray($response)
+    {
+        if(!is_object($response)){
+            return false;
+        }
+
+        try{
+            $this->lastStatusTime   = $response->CompletedTrackDetails->TrackDetails->StatusDetail->CreationTime;
+            $this->statusDescription    = $response->CompletedTrackDetails->TrackDetails->StatusDetail->Description;
+            $this->currentStreet = $response->CompletedTrackDetails->TrackDetails->StatusDetail->Location->StreetLines;
+            $this->currentCity   = $response->CompletedTrackDetails->TrackDetails->StatusDetail->Location->City;
+            $this->currentState  = $response->CompletedTrackDetails->TrackDetails->StatusDetail->Location->StateOrProvinceCode;
+            $this->currentCountry    = $response->CompletedTrackDetails->TrackDetails->StatusDetail->Location->CountryName;
+            $this->currentTrackingNumber = $response->CompletedTrackDetails->TrackDetails->TrackingNumber;
+            $this->currentDimensions   = $response->CompletedTrackDetails->TrackDetails->PackageWeight->Value . 'X' . $response->CompletedTrackDetails->TrackDetails->PackageDimensions->Width . 'X' . $response->CompletedTrackDetails->TrackDetails->PackageDimensions->Height . ' ' . $response->CompletedTrackDetails->TrackDetails->PackageDimensions->Units;
+            $this->currentService  = $response->CompletedTrackDetails->TrackDetails->OperatingCompanyOrCarrierDescription;
+            $this->currentMasterTrackingNumber = $response->CompletedTrackDetails->TrackDetails->TrackingNumber;
+            $this->currentWeight   = $response->CompletedTrackDetails->TrackDetails->PackageWeight->Value . ' ' . $response->CompletedTrackDetails->TrackDetails->PackageWeight->Units;
+            $this->currentTotalPieces  = $response->CompletedTrackDetails->TrackDetails->PackageCount;
+            $this->currentPackaging    = $response->CompletedTrackDetails->TrackDetails->Packaging;
+        }catch(\Exception $e){
+            return $e->getMessage();
         }
     }
 }

@@ -27,7 +27,8 @@ class TrackTest extends PHPUnit_Framework_TestCase
     public function testTrack()
     {
         $track = new Track($this->authKey, $this->authPassword, $this->authAccountNumber, $this->authMeterNumber);
-        print_r($track->track(trackingNumber));
+        $track->track(trackingNumber);
+        var_dump($track->statusDescription);
         die();
     }
 
